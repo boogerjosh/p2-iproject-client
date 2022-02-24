@@ -9,11 +9,10 @@
   },
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
-    "autoprefixer": "^9",
     "axios": "^0.26.0",
     "core-js": "^3.8.3",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "firebase": "^9.6.7",
+    "postcss-cli": "^8.1.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
@@ -26,8 +25,11 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "autoprefixer": "^9.8.8",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "postcss": "^7.0.39",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vue-cli-plugin-tailwind": "~2.2.18",
     "vue-template-compiler": "^2.6.14"
   }
