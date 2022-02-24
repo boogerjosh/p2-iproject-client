@@ -76,14 +76,11 @@ export default new Vuex.Store({
     },
     async confirmEmailUser(context, payload){
       try {
-        await axios.post('https://gestura-new-app.herokuapp.com/send', {
+        const response = await axios.post('https://gestura-new-app.herokuapp.com/send', {
           email: payload.email,
           name: payload.name
-        }, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`
-          },
         })
+        console.log(response)
       } catch (error) {
         console.log(error)
       }
