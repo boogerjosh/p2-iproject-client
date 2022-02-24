@@ -34,6 +34,10 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    // loginSpotify(context){
+    //     axios.get('http://localhost:3000/login')
+    //     context.commit('setIsLogged', true)
+    // },
     async fetchData(context){
       try {
         const response = await axios.get('https://api.spotify.com/v1/browse/new-releases?country=US&limit=6&offset=1', {
@@ -72,7 +76,7 @@ export default new Vuex.Store({
     },
     async confirmEmailUser(context, payload){
       try {
-        await axios.post('https://gestura-app.herokuapp.com/send', {
+        await axios.post('https://gestura-new-app.herokuapp.com/send', {
           email: payload.email,
           name: payload.name
         }, {
@@ -86,7 +90,7 @@ export default new Vuex.Store({
     }, 
     async getTokenPayment(context, payload){
       try {
-        const response = await axios.post('https://gestura-app.herokuapp.com/payment', {
+        const response = await axios.post('https://gestura-new-app.herokuapp.com/payment', {
           price: payload.price,
           itemName: payload.itemName,
           name: payload.name,
@@ -118,7 +122,6 @@ export default new Vuex.Store({
           },
         })
         console.log(response)
-        // context.commit('setDataLyrics', response.data.items)
       } catch (error) {
         console.log(error)
       }
