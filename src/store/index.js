@@ -11,9 +11,13 @@ export default new Vuex.Store({
     fetchDataNewAlbum: [],
     fetchSearchSongs: [],
     dataUser: "",
-    fetchPalylists: []
+    fetchPalylists: [],
+    dataSong: ''
   },
   mutations: {
+    setDataSong(state, payload) {
+      state.dataSong = payload
+    },
     setDataLyrics(state, payload) {
       state.fetchPalylists = payload
     },
@@ -65,7 +69,6 @@ export default new Vuex.Store({
             Authorization: `Bearer ${localStorage.getItem("token")}`
           },
         })
-        console.log(response)
         context.commit('setDataUser', response)
       } catch (error) {
         console.log(error)
@@ -73,7 +76,7 @@ export default new Vuex.Store({
     },
     async confirmEmailUser(context, payload){
       try {
-        await axios.post('http://localhost:3000/send', {
+        await axios.post('https://gestura-new-app.herokuapp.com/send', {
           email: payload.email,
           name: payload.name
         }, {
@@ -87,7 +90,7 @@ export default new Vuex.Store({
     }, 
     async getTokenPayment(context, payload){
       try {
-        const response = await axios.post('http://localhost:3000/payment', {
+        const response = await axios.post('https://gestura-new-app.herokuapp.com/payment', {
           price: payload.price,
           itemName: payload.itemName,
           name: payload.name,
@@ -105,20 +108,31 @@ export default new Vuex.Store({
             Authorization: `Bearer ${localStorage.getItem("token")}`
           },
         })
-        console.log(response.data.items)
         context.commit('setDataLyrics', response.data.items)
       } catch (error) {
         console.log(error)
       }
     },
-    async getLyrics(context, payload) {
+    // async getSong(context, payload) {
+    //   try {
+    //     const response = await axios.get(`https://api.genius.com/search?q=${payload}`, {
+    //       headers: {
+    //         Authorization: 'Bearer or1OpU-pVPkkMIZmkRuBhcbe-X1fiZiwiF4zrvk7gO_bXpSdw8ik-6tRPmBV-H2s'
+    //       },
+    //     })
+    //     console.log(response)
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // },
+    async getSong(context, payload) {
       try {
-        const response = await axios.get(`https://api.genius.com/search?q=${payload}`, {
+        const response = await axios.get(`https://api.spotify.com/v1/tracks/${payload}`, {
           headers: {
-            Authorization: 'Bearer or1OpU-pVPkkMIZmkRuBhcbe-X1fiZiwiF4zrvk7gO_bXpSdw8ik-6tRPmBV-H2s'
+            Authorization: `Bearer ${localStorage.getItem("token")}`
           },
         })
-        console.log(response)
+        context.commit('setDataSong', response)
       } catch (error) {
         console.log(error)
       }

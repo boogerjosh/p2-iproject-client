@@ -69,7 +69,7 @@
             <h2 class="text-left mb-2 text-sm font-bold text-gray-900">{{ data.name }}</h2>
             <button v-for="artist in data.artists" :key="artist.id" type="button" class=" flex justify-start text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-2.5 py-1 text-left mr-2 mb-2 dark:focus:ring-yellow-900">{{ artist.name }}</button>
             <button type="button" class="text-left flex justify-start mr-2 mb-2 text-xs font-medium text-gray-900 bg-white rounded-full hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Album: {{ data.album.name }}</button>
-            <button type="button" class="text-left flex justify-start text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">See Detail</button>
+            <button @click.prevent="geniusDetail(data.id)" type="button" class="text-left flex justify-start text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">See Detail</button>
             <a v-if="registered" :href="data.external_urls.spotify" target="_blank">
               <img src="https://logodownload.org/wp-content/uploads/2020/03/listen-on-spotify.png"
             class=" w-1/1 lg:w-1/2">
@@ -218,6 +218,9 @@ export default {
     },
   },
   methods: {
+    geniusDetail(id) {
+      this.$router.push(`/song-detail/${id}`)
+    },
     async paymentPage() {
       await this.$store.dispatch('getTokenPayment', {
         price: this.price,
@@ -260,6 +263,7 @@ export default {
     }
     if (localStorage.getItem("token")) {
       this.$store.commit('setIsLogged', true)
+      console.log(this.searchTheSong())
       this.fetchDataLyric()
       this.fetchDataUser()
       this.searchTheSong()
