@@ -4,7 +4,6 @@
     <h1 class="mb-2 text-2xl font-bold text-gray-900">Hi..<i class="fa-solid fa-heart"></i>  {{ dataUser.data.display_name }}</h1>
   </div>
   <div class='grid justify-items-center mb-10'>
-  <img :src="dataUser.data.images[0].url" class="mb-5 w-12 h-12 rounded-full">
   <button v-if="!isPremium"  @click.prevent="paymentPage" type="button" class="text-white bg-yellow-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Upgrade to premium</button>
   <button v-if="isPremium" type="button" class="text-white bg-yellow-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Premium</button>
   <button v-if="!registered" @click.prevent="confirmEmail" type="button" class="text-white bg-yellow-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Confirm your email</button>
@@ -70,7 +69,7 @@
             <h2 class="text-left mb-2 text-sm font-bold text-gray-900">{{ data.name }}</h2>
             <button v-for="artist in data.artists" :key="artist.id" type="button" class=" flex justify-start text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-2.5 py-1 text-left mr-2 mb-2 dark:focus:ring-yellow-900">{{ artist.name }}</button>
             <button type="button" class="text-left flex justify-start mr-2 mb-2 text-xs font-medium text-gray-900 bg-white rounded-full hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Album: {{ data.album.name }}</button>
-            <button type="button" @click.prevent="searchLyric(data.artists[0].name, data.name)" class="text-left flex justify-start text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">See Detail</button>
+            <button type="button" class="text-left flex justify-start text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2.5 py-1 text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700">See Detail</button>
             <a v-if="registered" :href="data.external_urls.spotify" target="_blank">
               <img src="https://logodownload.org/wp-content/uploads/2020/03/listen-on-spotify.png"
             class=" w-1/1 lg:w-1/2">
@@ -81,6 +80,7 @@
   </div>
    <br><br><br><br><br><br><br><br><br>
    <br><br><br><br><br><br><br><br><br>
+   <br><br><br><br><br><br>
     <footer class="bg-yellow-300 border-t border-gray-200">
       <div
         class="
@@ -218,12 +218,6 @@ export default {
     },
   },
   methods: {
-    searchLyric(data1, data2) {
-      let result = data1.concat(" ", data2)
-      console.log(result)
-      this.$store.dispatch('getLyrics', result)
-
-    },
     async paymentPage() {
       await this.$store.dispatch('getTokenPayment', {
         price: this.price,

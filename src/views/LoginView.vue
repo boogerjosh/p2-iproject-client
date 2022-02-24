@@ -33,8 +33,23 @@ export default {
   name: 'LoginView',
   methods: {
     loginSpotify() {
+      const CLIENT_ID = "aa132e4ee1684b43887cd4e9443b60ee"; // insert your client id here from spotify
+      const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
+      // const REDIRECT_URL_AFTER_LOGIN = "http://localhost:8080";
+      const SPACE_DELIMITER = "%20";
+      const SCOPES = [
+      "user-read-currently-playing",
+      "user-read-playback-state",
+      "playlist-read-private",
+      "user-read-private",
+      "user-read-email",
+      "user-read-playback-position",
+      "user-top-read",
+      "user-read-recently-played"
+      ];
+      const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
       // this.$store.dispatch('loginSpotify')
-      window.location.href = 'https://accounts.spotify.com/authorize?client_id=aa132e4ee1684b43887cd4e9443b60ee&redirect_uri=https://new-geatura-app.web.app&response_type=token&scope=user-read-private user-read-email playlist-read-collaborative playlist-modify-public playlist-read-private playlist-modify-private'
+      window.location.href = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=https://new-geatura-app.web.app&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`
     }
   }
 }
