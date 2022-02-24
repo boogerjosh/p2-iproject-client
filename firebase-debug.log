@@ -1,0 +1,140 @@
+[debug] [2022-02-24T09:03:24.247Z] ----------------------------------------------------------------------
+[debug] [2022-02-24T09:03:24.252Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2022-02-24T09:03:24.253Z] CLI Version:   10.2.1
+[debug] [2022-02-24T09:03:24.253Z] Platform:      win32
+[debug] [2022-02-24T09:03:24.254Z] Node Version:  v16.13.0
+[debug] [2022-02-24T09:03:24.257Z] Time:          Thu Feb 24 2022 16:03:24 GMT+0700 (Western Indonesia Time)
+[debug] [2022-02-24T09:03:24.257Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-02-24T09:03:24.280Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-02-24T09:03:24.281Z] > authorizing via signed-in user (joshsudarso19@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Hacktiv8\P-2 Week 1\p2-iproject-client
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2022-02-24T09:03:47.849Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-02-24T09:03:47.852Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-02-24T09:03:48.068Z] <<< HTTP RESPONSE 200 {"date":"Thu, 24 Feb 2022 09:03:48 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-24T09:03:48.822Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"new-gestura-app","name":"y"}
+[debug] [2022-02-24T09:03:49.979Z] <<< HTTP RESPONSE 400 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Thu, 24 Feb 2022 09:03:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=974","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-24T09:03:49.980Z] <<< HTTP RESPONSE BODY {"error":{"code":400,"message":"field [display_name] has issue [project display name must be at least 4 characters]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"display_name","description":"project display name must be at least 4 characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2022-02-24T09:03:50.103Z] FirebaseError: HTTP Error: 400, field [display_name] has issue [project display name must be at least 4 characters]
+    at module.exports (C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:47:12)
+    at Request._callback (C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:41:35)
+    at Request.self.callback (C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:390:28)
+    at Request.emit (node:domain:475:12)
+    at Request.<anonymous> (C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:390:28)
+    at Request.emit (node:domain:475:12)
+    at IncomingMessage.<anonymous> (C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:509:28)
+    at IncomingMessage.emit (node:events:402:35)
+    at IncomingMessage.emit (node:domain:475:12)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2022-02-24T09:04:08.428Z] ----------------------------------------------------------------------
+[debug] [2022-02-24T09:04:08.432Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Acer\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2022-02-24T09:04:08.434Z] CLI Version:   10.2.1
+[debug] [2022-02-24T09:04:08.434Z] Platform:      win32
+[debug] [2022-02-24T09:04:08.435Z] Node Version:  v16.13.0
+[debug] [2022-02-24T09:04:08.437Z] Time:          Thu Feb 24 2022 16:04:08 GMT+0700 (Western Indonesia Time)
+[debug] [2022-02-24T09:04:08.438Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-02-24T09:04:08.460Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-02-24T09:04:08.461Z] > authorizing via signed-in user (joshsudarso19@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Hacktiv8\P-2 Week 1\p2-iproject-client
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2022-02-24T09:04:23.048Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"new-geatura-app","name":"new-geatura-app"}
+[debug] [2022-02-24T09:04:24.568Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 24 Feb 2022 09:04:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1358","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-24T09:04:24.575Z] > refreshing access token with scopes: []
+[debug] [2022-02-24T09:04:24.576Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-02-24T09:04:24.800Z] <<< HTTP RESPONSE 200 {"date":"Thu, 24 Feb 2022 09:04:25 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-24T09:04:25.989Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.8194425066424107176 [none]
+[debug] [2022-02-24T09:04:27.377Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.8194425066424107176 200
+[debug] [2022-02-24T09:04:27.378Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.8194425066424107176 {"name":"operations/cp.8194425066424107176","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true}}
+[debug] [2022-02-24T09:04:27.883Z] [Project Creation Poller] Retrying task index 0
+[debug] [2022-02-24T09:04:27.884Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.8194425066424107176 [none]
+[debug] [2022-02-24T09:04:29.274Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.8194425066424107176 200
+[debug] [2022-02-24T09:04:29.274Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.8194425066424107176 {"name":"operations/cp.8194425066424107176","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"932969501393","projectId":"new-geatura-app","lifecycleState":"ACTIVE","name":"new-geatura-app","createTime":"2022-02-24T09:04:24.590Z"}}
+[debug] [2022-02-24T09:04:29.278Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-02-24T09:04:29.279Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-02-24T09:04:29.539Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 24 Feb 2022 09:04:29 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-24T09:04:29.693Z] >>> HTTP REQUEST POST https://firebase.googleapis.com/v1beta1/projects/new-geatura-app:addFirebase  
+ 
+[debug] [2022-02-24T09:04:33.000Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 24 Feb 2022 09:04:33 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-24T09:04:33.001Z] > refreshing access token with scopes: []
+[debug] [2022-02-24T09:04:33.002Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-02-24T09:04:33.140Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Thu, 24 Feb 2022 09:04:33 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-24T09:04:33.889Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 [none]
+[debug] [2022-02-24T09:04:35.043Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 200
+[debug] [2022-02-24T09:04:35.043Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 {"name":"operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5"}
+[debug] [2022-02-24T09:04:35.543Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2022-02-24T09:04:35.544Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 [none]
+[debug] [2022-02-24T09:04:36.710Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 200
+[debug] [2022-02-24T09:04:36.710Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 {"name":"operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5"}
+[debug] [2022-02-24T09:04:37.722Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2022-02-24T09:04:37.723Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 [none]
+[debug] [2022-02-24T09:04:39.042Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 200
+[debug] [2022-02-24T09:04:39.042Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 {"name":"operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5"}
+[debug] [2022-02-24T09:04:41.049Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2022-02-24T09:04:41.049Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 [none]
+[debug] [2022-02-24T09:04:41.942Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 200
+[debug] [2022-02-24T09:04:41.942Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5 {"name":"operations/workflows/YzI3MTQyYmEtZjY1MS00YTliLTgzYTUtNmNlNTdhOTE5MmI5","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.FirebaseProject","projectId":"new-geatura-app","projectNumber":"932969501393","displayName":"new-geatura-app","name":"projects/new-geatura-app","resources":{"hostingSite":"new-geatura-app"}}}
+[info] 
+[info] === Your Firebase project is ready! ===
+[info] 
+[info] Project information:
+[info]    - Project ID: new-geatura-app
+[info]    - Project Name: new-geatura-app
+[info] 
+[info] Firebase console is available at
+[info] https://console.firebase.google.com/project/new-geatura-app/overview
+[info] i  Using project new-geatura-app (new-geatura-app) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
