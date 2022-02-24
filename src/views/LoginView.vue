@@ -34,7 +34,7 @@ export default {
   methods: {
     loginSpotify() {
       // this.$store.dispatch('loginSpotify')
-      window.location.href = 'https://accounts.spotify.com/authorize?client_id=aa132e4ee1684b43887cd4e9443b60ee&redirect_uri=http://localhost:8080&response_type=token&scope=user-read-private user-read-email playlist-read-collaborative playlist-modify-public playlist-read-private playlist-modify-private'
+      window.location.href = 'https://accounts.spotify.com/authorize?client_id=aa132e4ee1684b43887cd4e9443b60ee&redirect_uri=https://gestura-app.web.app/&response_type=token&scope=user-read-private user-read-email playlist-read-collaborative playlist-modify-public playlist-read-private playlist-modify-private'
     }
   }
 }
